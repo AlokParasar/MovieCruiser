@@ -40,7 +40,7 @@ namespace MovieCruiser
       using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
       {
         var dbContext = serviceScope.ServiceProvider.GetService<MoviesDbContext>();
-        //DbSeeder.Seed(dbContext);
+        DbSeeder.Seed(dbContext);
       }
       //Enabling Cors
       app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
